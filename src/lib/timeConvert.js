@@ -6,7 +6,3 @@ export function convertTimestampToDateTime(timestamp) {
   return `${hours}:${minutes}:${seconds}`;
 }
 
-// Example usage:
-const timestamp = 1711965961;
-const dateTime = convertTimestampToDateTime(timestamp);
-console.log("Converted Date and Time:", dateTime);

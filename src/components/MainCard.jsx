@@ -36,7 +36,6 @@ export default function MainCard() {
         return <ClearIcon sx={{ fontSize: "120px" }} />;
     }
   };
-  console.log(weeklyWeatherData);
 
   return (
     <div className="bg-blue-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 h-72 md:h-96 hover:border-blue-600 hover:-translate-y-1 transition-all duration-700 hover:translate-x-1">

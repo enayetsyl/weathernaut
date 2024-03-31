@@ -27,8 +27,6 @@ const SharedContextProvider = ({children}) => {
     const successCallback = (position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      console.log("Latitude:", latitude);
-      console.log("Longitude:", longitude);
       const unit = 'metric'
       weeklyForecast(latitude, longitude, unit);
     };
@@ -54,10 +52,9 @@ const SharedContextProvider = ({children}) => {
       const response = await axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&APPID=${apiKey}`
       );
-      console.log(response.data)
       setWeatherData(response.data)
     } catch (error) {
-      console.log(error.message)
+      console.error(error.message)
     } finally {
       setIsLoading(false)
     }
@@ -67,10 +64,9 @@ const SharedContextProvider = ({children}) => {
     try {
       setIsLoading(true)
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=7&units=${unit}&appid=${apiKey}`)
-      console.log(response.data)
     setWeeklyWeatherData(response.data)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     } finally{
       setIsLoading(false)
     }
