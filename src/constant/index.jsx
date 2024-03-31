@@ -16,6 +16,7 @@ export { default as CardContent } from '@mui/material/CardContent';
 export { default as Typography } from '@mui/material/Typography';
 export { default as Stack } from '@mui/material/Stack';
 export { default as LinearProgress } from '@mui/material/LinearProgress';
+export { default as CircularProgress } from '@mui/material/CircularProgress';
 export { default as ToggleButton } from '@mui/material/ToggleButton';
 export { default as ToggleButtonGroup } from '@mui/material/ToggleButtonGroup';
 
