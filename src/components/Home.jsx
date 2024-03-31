@@ -2,25 +2,27 @@
 import { clearImage, cloudImage, mistImage, rainImage, snowImage, stormImage, backgroundImage } from '../constant/index'
 import { useSharedContext } from "../context/SharedContext";
 import { MainCard, WeekCard} from '../constant/index'
+import { useWeatherDataCache } from '../hooks/useCachedData';
 
 
 const Home = () => {
-  const {weeklyWeatherData, isLoading, unit, setUnit} = useSharedContext()
+  const { isLoading, unit, setUnit} = useSharedContext()
+  const cachedWeatherData = useWeatherDataCache();
 
   let weatherImage;
-  if (weeklyWeatherData?.list[0]?.weather[0]?.main === 'Thunderstorm') {
+  if (cachedWeatherData?.list[0]?.weather[0]?.main === 'Thunderstorm') {
     weatherImage = stormImage;
-  } else if (weeklyWeatherData?.list[0]?.weather[0]?.main === 'Drizzle') {
+  } else if (cachedWeatherData?.list[0]?.weather[0]?.main === 'Drizzle') {
     weatherImage = rainImage;
-  } else if (weeklyWeatherData?.list[0]?.weather[0]?.main === 'Rain') {
+  } else if (cachedWeatherData?.list[0]?.weather[0]?.main === 'Rain') {
     weatherImage = rainImage;
-  } else if (weeklyWeatherData?.list[0]?.weather[0]?.main === 'Snow') {
+  } else if (cachedWeatherData?.list[0]?.weather[0]?.main === 'Snow') {
     weatherImage = snowImage;
-  } else if (weeklyWeatherData?.list[0]?.weather[0]?.main === 'Atmosphere') {
+  } else if (cachedWeatherData?.list[0]?.weather[0]?.main === 'Atmosphere') {
     weatherImage = mistImage;
-  } else if (weeklyWeatherData?.list[0]?.weather[0]?.main === 'Clear') {
+  } else if (cachedWeatherData?.list[0]?.weather[0]?.main === 'Clear') {
     weatherImage = clearImage;
-  } else if (weeklyWeatherData?.list[0]?.weather[0]?.main === 'Clouds') {
+  } else if (cachedWeatherData?.list[0]?.weather[0]?.main === 'Clouds') {
     weatherImage = cloudImage;
   } else {
     weatherImage = backgroundImage; 
@@ -32,7 +34,7 @@ const Home = () => {
     >
       <div className="w-full lg:w-[40%]">
         <MainCard 
-        weeklyWeatherData={weeklyWeatherData}
+        cachedWeatherData={cachedWeatherData}
         isLoading={isLoading}
         unit={unit}
         setUnit={setUnit}
@@ -41,9 +43,9 @@ const Home = () => {
       <div className="w-full lg:w-[60%]">
         <div className="w-full">
           {
-            weeklyWeatherData?.list && weeklyWeatherData?.list.length > 0 ? <div className="grid grid-cols-1 md:grid-cols-2  gap-5">
+            cachedWeatherData?.list && cachedWeatherData?.list.length > 0 ? <div className="grid grid-cols-1 md:grid-cols-2  gap-5">
               {
-                weeklyWeatherData?.list?.slice(1, 7).map(item => <WeekCard
+                cachedWeatherData?.list?.slice(1, 7).map(item => <WeekCard
                 key={item.dt}
                 item={item}
                 unit={unit}
@@ -51,8 +53,7 @@ const Home = () => {
               }
             </div>: (<p> No Data available.</p>)
           }
-          
-         
+                  
         </div>
       </div>
     </div>
