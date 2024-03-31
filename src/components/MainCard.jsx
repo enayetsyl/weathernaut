@@ -39,7 +39,7 @@ export default function MainCard() {
   console.log(weeklyWeatherData);
 
   return (
-    <div className="bg-gray-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 h-72 md:h-96 hover:border-blue-600 hover:-translate-y-1 transition-all duration-700 hover:translate-x-1">
+    <div className="bg-blue-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 h-72 md:h-96 hover:border-blue-600 hover:-translate-y-1 transition-all duration-700 hover:translate-x-1">
       {isLoading ? (
          <Stack sx={{ width: '100%', color: 'grey.500' }} spacing={2}
          marginTop={10}
@@ -50,7 +50,7 @@ export default function MainCard() {
        </Stack>
       ) : (
         <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Typography sx={{ fontSize: 14 }} color="text.primary" gutterBottom>
             {weeklyWeatherData?.list && weeklyWeatherData?.list.length > 0
               ? weeklyWeatherData?.list[0]?.dt_txt
               : "N/A"}
@@ -60,7 +60,7 @@ export default function MainCard() {
               <Typography variant="h5" component="div">
                 {weeklyWeatherData?.city && weeklyWeatherData?.city?.name}({weeklyWeatherData?.city && weeklyWeatherData?.city?.country})
               </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary"
+              <Typography sx={{ mb: 1.5 }} color="text.Primary"
               style={{ textTransform: 'capitalize' }}              
               >
                 {weeklyWeatherData?.list && weeklyWeatherData?.list.length > 0

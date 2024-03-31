@@ -38,7 +38,7 @@ export default function WeekCard({item, unit}) {
   };
   
   return (
-    <div className='bg-gray-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 hover:border-blue-600  transition-all duration-700 odd:hover:-translate-x-1 odd:hover:-translate-y-1 
+    <div className='bg-blue-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 hover:border-blue-600  transition-all duration-700 odd:hover:-translate-x-1 odd:hover:-translate-y-1 
     even:hover:translate-x-1
     even:hover:-translate-y-1
     '>
