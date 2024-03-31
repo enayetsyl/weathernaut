@@ -1,5 +1,5 @@
 import { Home, Navbar } from "./constant";
-import { Stack, CircularProgress } from "./constant";
+import { Stack, CircularProgress, backgroundImage } from "./constant";
 import { useSharedContext } from "./context/SharedContext";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <main>
       {
         isLoading ? (
-          <div className="min-h-screen justify-center items-center flex">
+          <div className="min-h-screen justify-center items-center flex" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
       <CircularProgress color="secondary" />
       <CircularProgress color="success" />
