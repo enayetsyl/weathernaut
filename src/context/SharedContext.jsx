@@ -52,7 +52,7 @@ const SharedContextProvider = ({children}) => {
     try {
       setIsLoading(true)
       const response = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&APPID=${apiKey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&APPID=${apiKey}`
       );
       setWeatherData(response.data)
     } catch (error) {
@@ -65,7 +65,7 @@ const SharedContextProvider = ({children}) => {
   const weeklyForecast = async(latitude, longitude, unit) => {
     try {
       setIsLoading(true)
-      const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=7&units=${unit}&appid=${apiKey}`)
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=7&units=${unit}&appid=${apiKey}`)
       console.log(response.data)
     setWeeklyWeatherData(response.data)
     } catch (error) {
