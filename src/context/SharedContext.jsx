@@ -54,6 +54,7 @@ const SharedContextProvider = ({children}) => {
       const response = await axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&APPID=${apiKey}`
       );
+      console.log(response.data)
       setWeatherData(response.data)
     } catch (error) {
       console.log(error.message)
