@@ -56,3 +56,18 @@ In conclusion, Weathernaut is a robust and user-friendly weather application tha
 - Additionally, it's worth noting that the API's geolocation functionality offers an option to limit multiple city searches, typically set to 1 by default.
 
 - In handling these intricacies, it's prudent to ensure proper handling of the received data, including any discrepancies in city names, and to consider adjusting the geolocation settings as needed to align with specific search requirements or constraints.
+
+## 🏆 **Author:** Md Enayetur Rahman
+
+### Contact Information
+- [LinkedIn](https://www.linkedin.com/in/md-enayetur-rahman/)
+- [Facebook](https://www.facebook.com/profile.php?id=100094416483981)
+- [X (Twitter)](https://x.com/enayetu_syl)
+- [YouTube](https://www.youtube.com/@MdEnayeturRahman)
+- [GitHub](https://github.com/enayetsyl/)
+- [Medium](https://medium.com/@enayetflweb)
+- [dev.to](https://dev.to/md_enayeturrahman_2560e3)
+- [Leetcode](https://leetcode.com/u/XTl7hvNPIc/)
+- [Hackerrank](https://www.hackerrank.com/profile/enayetflweb)
+- [Codeforces](https://codeforces.com/profile/enayetsyl)
+- [Email](mailto:enayetflweb@gmail.com)
